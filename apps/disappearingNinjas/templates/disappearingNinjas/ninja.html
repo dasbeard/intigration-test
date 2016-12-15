@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% load static %}
+
+    
+      {% if color|lower == "purple" %}
+      <img src="{% static 'disappearingNinjas/imgs/donatello.jpg' %}" alt="donatello">
+      {% elif color|lower == "blue" %}
+      <img src="{% static 'disappearingNinjas/imgs/leonardo.jpg' %}" alt="leonardo">
+      {% elif color|lower == "red" %}
+      <img src="{% static 'disappearingNinjas/imgs/raphael.jpg' %}" alt="raphaels">
+      {% elif color|lower == "orange" %}
+      <img src="{% static 'disappearingNinjas/imgs/michelangelo.jpg' %}" alt="michelangelo">
+      {% else %}
+      <img src="{% static 'disappearingNinjas/imgs/notapril.jpg' %}" alt="notapril">
+      {% endif %}
+
+
+
+  </body>
+</html>

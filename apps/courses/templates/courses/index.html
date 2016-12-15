@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Courses</title>
+    {%load static %}
+    <link rel="stylesheet" href="{% static 'courses/css/styles.css' %}">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome {{user.full_name}}</h1>
+      <div class="inputForm">
+        <form action="{% url 'courses:add' %}" method="POST">
+          <fieldset>
+            <legend>Add a New Course</legend>
+            <label>Name: </label> <input type="text" name="name">
+            <label class="desc">Description: </label><textarea name="description" rows="6" cols="40"></textarea>
+            <input type="submit" value="Add" class="BTN" >
+          </fieldset>
+          {% csrf_token %}
+        </form>
+      </div>
+      <div class="courses">
+
+
+        <h3>Courses</h3>
+        <table>
+          <thead>
+            <th>Course ID</th>
+            <th>Course Name</th>
+            <th>Description</th>
+            <th>Date Added</th>
+            <th>Actions</th>
+          </thead>
+          {% for val in classes %}
+          <tbody>
+            <tr>
+              <td> {{val.id}} </td>
+              <td> {{val.name}} </td>
+              <td>{{val.description}}</td>
+              <td>{{val.created_at}}</td>
+              <td><a href="{% url 'courses:remove' id=val.id %}">Remove</a> | <a href="{% url 'courses:user_courses' id=val.id %}">Courses</a></td>
+            </tr>
+            {% endfor %}
+
+
+          </tbody>
+        </table>
+      </div>
+        <a href="{% url 'users:signout' %}">Signout</a>
+    </div>
+  </body>
+</html>

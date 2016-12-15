@@ -1,0 +1,43 @@
+*{
+  /*background-color: silver;*/
+}
+
+.container{
+  display: inline-block;
+}
+
+.inputForm{
+  display: inline-block;
+  margin-left: 500px;
+  width: 350px;
+  text-align: center;
+}
+
+.desc{
+  display: block;
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+
+.BTN{
+  margin-top: 10px;
+  margin-left: 175px;
+  display: block;
+}
+
+h3{
+margin-left: 450px;
+}
+
+table, th, td{
+  border: 1px solid black;
+}
+
+table{
+  margin: 0 auto;
+  margin-left: 350px;
+}
+
+td{
+  width: 175px;
+}
